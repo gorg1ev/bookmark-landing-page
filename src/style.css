@@ -7,3 +7,11 @@
 body {
    font-family: 'Rubik', sans-serif;
 }
+
+.links {
+   @apply text-grayishBlue uppercase text-sm ease-in-out duration-300  hover:text-softRed;
+}
+
+.btn-red {
+   @apply text-white bg-softRed px-7 py-2 rounded-md uppercase shadow-lg text-sm border-transparent border-2 ease-in-out duration-500 hover:bg-transparent hover:text-softRed hover:border-softRed hover:border-2;
+}
