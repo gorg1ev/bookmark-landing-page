@@ -12,6 +12,35 @@ body {
    @apply text-grayishBlue uppercase text-sm ease-in-out duration-300  hover:text-softRed;
 }
 
+.btn {
+   @apply rounded-md text-sm shadow-lg border-transparent border-2 ease-in-out duration-500 hover:bg-gray-50;
+}
+
 .btn-red {
-   @apply text-white bg-softRed px-7 py-2 rounded-md uppercase shadow-lg text-sm border-transparent border-2 ease-in-out duration-500 hover:bg-transparent hover:text-softRed hover:border-softRed hover:border-2;
+   @apply text-white bg-softRed px-5 py-2  uppercase hover:text-softRed hover:border-softRed hover:border-2;
+}
+
+.btn-primary {
+   @apply text-white bg-softBlue px-5 py-2 hover:border-softBlue hover:text-softBlue;
+}
+
+.btn-outline-secondary {
+   @apply text-veryDarkBlue  px-5 py-2 bg-gray-100 hover:border-veryDarkBlue hover:text-veryDarkBlue;
+}
+
+.pill {
+   @apply bg-softBlue absolute w-[1000px] h-[320px] rounded-full -z-10;
+}
+
+/* Media Querys   */
+@media only screen and (max-width: 768px) {
+   .pill {
+      height: 260px;
+   }
+}
+
+@media only screen and (max-width: 480px) {
+   .pill {
+      height: 200px;
+   }
 }

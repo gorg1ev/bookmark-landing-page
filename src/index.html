@@ -30,17 +30,52 @@
                <!-- Link 3 -->
                <a href="#" class="links">Contact</a>
                <!-- Link 4 -->
-               <a href="#" class="btn-red">Login</a>
+               <a href="#" class="btn btn-red">Login</a>
             </div>
             <!-- Hamburger Icon -->
-            <div>
-               <img
-                  class="block md:hidden cursor-pointer"
-                  src="../images/icon-hamburger.svg"
-                  alt="Hamburger Icon"
-               />
-            </div>
+            <button class="block md:hidden">
+               <img src="../images/icon-hamburger.svg" alt="Hamburger Icon" />
+            </button>
          </div>
       </nav>
+
+      <!-- Hero Section  -->
+      <section id="hero">
+         <div
+            class="container px-6 mx-auto flex flex-col-reverse md:items-center mt-32 lg:flex-row"
+         >
+            <!-- Left Side  -->
+            <div
+               class="flex flex-col gap-6 text-center items-center mt-28 md:mt-36 lg:mt-0 lg:text-left lg:items-start"
+            >
+               <h1 class="text-3xl font-bold text-veryDarkBlue md:text-5xl">
+                  A Simple Bookmark Manager
+               </h1>
+               <p class="max-w-md text-grayishBlue text-md">
+                  A clean and simple interface to organize your favourite
+                  websites. Open a new browser tab and see your sites load
+                  instantly. Try it for free.
+               </p>
+               <div class="flex gap-4">
+                  <a href="#" class="btn btn-primary"> Get it on Chrome</a>
+                  <a href="#" class="btn btn-outline-secondary">
+                     Get it on Firefoxe</a
+                  >
+               </div>
+            </div>
+            <!-- Right Side  -->
+            <div class=":max-w-xl pr-1 relative lg:-mr-20 lg:mb-0">
+               <img
+                  class="w-full"
+                  src="../images/illustration-hero.svg"
+                  alt="Tablet Illustration"
+               />
+               <!-- Big Blue Pill  -->
+               <div
+                  class="pill -right-[225%] -bottom-[15%] sm:-right-[150%] sm:-bottom-[10%] md:-right-[80%] md:-bottom-[10%] lg:-right-[130%] lg:-bottom-[20%] xl:-right-[107%] xl:-bottom-[10%]"
+               ></div>
+            </div>
+         </div>
+      </section>
    </body>
 </html>
