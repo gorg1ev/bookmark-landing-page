@@ -32,6 +32,26 @@ body {
    @apply bg-softBlue absolute w-[1000px] h-[320px] rounded-full -z-10;
 }
 
+.header-2 {
+   @apply text-xl font-medium text-veryDarkBlue md:text-3xl;
+}
+
+.paragraph {
+   @apply text-grayishBlue max-w-md mx-auto;
+}
+
+.tab {
+   @apply relative w-full text-center border-b-2 cursor-pointer text-grayishBlue  hover:text-softRed py-4 md:w-[240px] md:pb-7;
+}
+
+.active-text {
+   @apply text-veryDarkBlue hover:text-veryDarkBlue;
+}
+
+.active-tab {
+   @apply bg-softRed absolute left-1/2 bottom-[-2px] h-1 w-24 -translate-x-1/2 md:left-0 md:translate-x-0 md:w-[240px];
+}
+
 /* Media Querys   */
 @media only screen and (max-width: 768px) {
    .pill {

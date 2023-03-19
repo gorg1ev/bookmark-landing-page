@@ -40,7 +40,7 @@
       </nav>
 
       <!-- Hero Section  -->
-      <section id="hero">
+      <section id="hero" class="overflow-x-hidden h-auto lg:h-[600px]">
          <div
             class="container px-6 mx-auto flex flex-col-reverse md:items-center mt-32 lg:flex-row"
          >
@@ -64,7 +64,7 @@
                </div>
             </div>
             <!-- Right Side  -->
-            <div class=":max-w-xl pr-1 relative lg:-mr-20 lg:mb-0">
+            <div class="max-w-xl pr-1 relative lg:-mr-20 lg:mb-0">
                <img
                   class="w-full"
                   src="../images/illustration-hero.svg"
@@ -72,8 +72,66 @@
                />
                <!-- Big Blue Pill  -->
                <div
-                  class="pill -right-[225%] -bottom-[15%] sm:-right-[150%] sm:-bottom-[10%] md:-right-[80%] md:-bottom-[10%] lg:-right-[130%] lg:-bottom-[20%] xl:-right-[107%] xl:-bottom-[10%]"
+                  class="pill -right-[225%] -bottom-[15%] sm:-right-[150%] sm:-bottom-[10%] md:-right-[95%] md:-bottom-[20%] lg:-right-[130%] lg:-bottom-[20%] xl:-right-[107%] xl:-bottom-[10%]"
                ></div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Features Section  -->
+      <section id="features">
+         <div
+            class="container px-6 flex flex-col items-center mx-auto text-center mt-28 md:mt-20"
+         >
+            <h2 class="header-2 mb-4 md:mb-7">Features</h2>
+            <p class="paragraph mb-7 md:mb-16">
+               Our aim is to make it quick and easy for you to access your
+               favourite websites. Your bookmarks sync between your devices so
+               you can access them on the go.
+            </p>
+            <!-- Tabs  -->
+            <ul
+               class="flex flex-col items-center w-full md:justify-center mb-16 md:flex-row"
+               id="tabs"
+            >
+               <li class="tab active-text border-t-2 md:border-t-0">
+                  <span>Simple Bookmarking</span>
+                  <span class="active-tab"></span>
+               </li>
+               <li class="tab">
+                  <span>Speedy Searching</span>
+                  <span></span>
+               </li>
+               <li class="tab">
+                  <span>Easy Sharing</span>
+                  <span></span>
+               </li>
+            </ul>
+            <div
+               class="flex flex-col items-center gap-24 lg:gap-32 lg:flex-row"
+            >
+               <!-- Left Side  -->
+               <div class="relative">
+                  <img
+                     src="../images/illustration-features-tab-1.svg"
+                     alt="Illustration Tabs"
+                  />
+                  <div
+                     class="pill right-[10%] -bottom-[50px] lg:-bottom-[100px]"
+                  ></div>
+               </div>
+               <!-- Right Side  -->
+               <div class="flex flex-col items-center gap-9 lg:items-start">
+                  <h2 class="header-2 lg:text-left">Bookmark in one click</h2>
+                  <p class="paragraph lg:text-left">
+                     Organize your bookmarks however you like. Our simple
+                     drag-and-drop interface gives you complete control over how
+                     you manage your favourite sites.
+                  </p>
+                  <a href="#" class="btn btn-primary hidden lg:inline-block">
+                     More Info</a
+                  >
+               </div>
             </div>
          </div>
       </section>
