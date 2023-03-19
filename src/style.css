@@ -36,8 +36,16 @@ body {
    @apply text-xl font-medium text-veryDarkBlue md:text-3xl;
 }
 
+.header-2-mb {
+   @apply mb-4 md:mb-7;
+}
+
 .paragraph {
    @apply text-grayishBlue max-w-md mx-auto;
+}
+
+.paragraph-2-mb {
+   @apply mb-7 md:mb-16;
 }
 
 .tab {
@@ -50,6 +58,21 @@ body {
 
 .active-tab {
    @apply bg-softRed absolute left-1/2 bottom-[-2px] h-1 w-24 -translate-x-1/2 md:left-0 md:translate-x-0 md:w-[240px];
+}
+
+.card {
+   @apply flex flex-col items-center py-6 shadow-lg rounded-lg w-72;
+   background-image: url('../images/bg-dots.svg');
+   background-repeat: no-repeat;
+   background-position: 0% 75%;
+}
+
+.header-3 {
+   @apply text-lg font-bold text-veryDarkBlue md:text-xl;
+}
+
+.small {
+   @apply text-xs text-grayishBlue md:text-sm;
 }
 
 /* Media Querys   */
