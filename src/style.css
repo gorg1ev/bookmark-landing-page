@@ -17,15 +17,15 @@ body {
 }
 
 .btn-red {
-   @apply text-white bg-softRed px-5 py-2  uppercase hover:text-softRed hover:border-softRed hover:border-2;
+   @apply text-white bg-softRed px-6 py-3  uppercase hover:text-softRed hover:border-softRed hover:border-2;
 }
 
 .btn-primary {
-   @apply text-white bg-softBlue px-5 py-2 hover:border-softBlue hover:text-softBlue;
+   @apply text-white bg-softBlue px-6 py-3 hover:border-softBlue hover:text-softBlue;
 }
 
 .btn-outline-secondary {
-   @apply text-veryDarkBlue  px-5 py-2 bg-gray-100 hover:border-veryDarkBlue hover:text-veryDarkBlue;
+   @apply text-veryDarkBlue  px-6 py-3 bg-gray-100 hover:border-veryDarkBlue hover:text-veryDarkBlue;
 }
 
 .pill {
@@ -89,6 +89,19 @@ body {
 
 .header-3 {
    @apply text-sm font-normal lg:text-base ease-in-out duration-300;
+}
+
+.input {
+   @apply relative rounded-md h-12 pl-3 pr-10  text-veryDarkBlue outline-none;
+}
+
+.error {
+   @apply border-2 border-softRed;
+}
+
+.header-4 {
+   @apply text-xs uppercase;
+   letter-spacing: 3px;
 }
 
 /* Media Querys   */

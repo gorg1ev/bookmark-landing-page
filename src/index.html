@@ -11,7 +11,7 @@
       <!-- Navbar  -->
       <nav>
          <div
-            class="container px-6 mt-8 flex justify-between items-center mx-auto md:mt-11"
+            class="container px-2 md:px-6 mt-8 flex justify-between items-center mx-auto md:mt-11"
          >
             <!-- Logo  -->
             <div>
@@ -42,7 +42,7 @@
       <!-- Hero Section  -->
       <section id="hero" class="overflow-x-hidden h-auto lg:h-[600px]">
          <div
-            class="container px-6 mx-auto flex flex-col-reverse md:items-center mt-32 lg:flex-row"
+            class="container px-2 md:px-6 mx-auto flex flex-col-reverse md:items-center mt-32 lg:flex-row"
          >
             <!-- Left Side  -->
             <div
@@ -81,7 +81,7 @@
       <!-- Features Section  -->
       <section id="features">
          <div
-            class="container px-6 flex flex-col items-center mx-auto text-center mt-28 md:mt-20"
+            class="container px-2 md:px-6 flex flex-col items-center mx-auto text-center mt-28 md:mt-20"
          >
             <h2 class="header-2 header-2-mb">Features</h2>
             <p class="paragraph paragraph-mb">
@@ -138,7 +138,9 @@
 
       <!-- Download Extension  -->
       <section id="download-extension">
-         <div class="container px-6 flex flex-col mt-48 mx-auto text-center">
+         <div
+            class="container px-2 md:px-6 flex flex-col mt-48 mx-auto text-center"
+         >
             <h2 class="header-2 header-2-mb">Download the extension</h2>
             <p class="paragraph paragraph-mb">
                We've got more browsers in the pipeline. Please do let us know if
@@ -192,7 +194,7 @@
       <!-- FAQ Section  -->
       <section id="faq">
          <div
-            class="container px-6 mx-auto flex flex-col items-center mt-36 text-center"
+            class="container px-2 md:px-6 mx-auto flex flex-col items-center mt-36 text-center"
          >
             <h2 class="header-2 header-2-mb">Frequently Asked Questions</h2>
             <p class="paragraph paragraph-mb">
@@ -268,6 +270,39 @@
                </li>
             </ul>
             <a href="#" class="btn btn-primary mt-16">More Info</a>
+         </div>
+      </section>
+
+      <!-- #CTA Section  -->
+      <section id="cta" class="bg-softBlue">
+         <div
+            class="container px-2 md:px-6 mx-auto max-w-lg flex flex-col items-center mt-36 text-center py-16 text-white"
+         >
+            <h5 class="header-4">35,000+ already joined</h5>
+            <h2 class="text-xl font-medium mt-11 text-white md:text-3xl">
+               Stay up-to-date with what <br />
+               we're doing
+            </h2>
+            <form class="flex flex-col md:items-start gap-5 mt-10 md:flex-row">
+               <div>
+                  <input
+                     class="input w-[300px]"
+                     type="email"
+                     placeholder="Enter your email address"
+                  />
+                  <span
+                     class="hidden absolute -translate-x-8 translate-y-[13px]"
+                  >
+                     <img src="../images/icon-error.svg" alt="Error Icon" />
+                  </span>
+                  <p
+                     class="hidden text-left text-xs font-bold p-1 pl-3 bg-softRed rounded-bl rounded-br -translate-y-2"
+                  >
+                     Whoops, make sure it's an email
+                  </p>
+               </div>
+               <button class="btn btn-red">Contact Us</button>
+            </form>
          </div>
       </section>
    </body>
