@@ -5,13 +5,19 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="../dist/style.css" />
+      <script src="./script.js" defer></script>
       <title>Bookmark Landing Page</title>
    </head>
-   <body>
+   <body class="font-rubik">
+      <div
+         class="hidden overlay absolute top-0 w-full h-screen bg-veryDarkBlue opacity-90 z-20"
+         id="overlay"
+      ></div>
       <!-- Navbar  -->
       <nav>
          <div
             class="container px-2 md:px-6 mt-8 flex justify-between items-center mx-auto md:mt-11"
+            id="main-nav"
          >
             <!-- Logo  -->
             <div>
@@ -33,9 +39,67 @@
                <a href="#" class="btn btn-red">Login</a>
             </div>
             <!-- Hamburger Icon -->
-            <button class="block md:hidden">
+            <button class="block md:hidden" id="hamburger">
                <img src="../images/icon-hamburger.svg" alt="Hamburger Icon" />
             </button>
+         </div>
+
+         <!-- Mobile Nav  -->
+         <div
+            class="hidden container h-full px-2 py-8 flex-col gap-10 absolute top-0 left-1/2 -translate-x-1/2 z-20"
+            id="mobile-nav"
+         >
+            <header class="flex items-center justify-between">
+               <div>
+                  <img
+                     src="../images/logo-bookmark-full-white.svg"
+                     alt="Logo"
+                  />
+               </div>
+               <button id="close">
+                  <img src="../images/icon-close.svg" alt="Close Icon" />
+               </button>
+            </header>
+            <div class="flex flex-col items-stretch text-center">
+               <!-- Link 1 -->
+               <a href="#" class="links-mobile">Features</a>
+               <!-- Link 2 -->
+               <a href="#" class="links-mobile">Pricing</a>
+               <!-- Link 3 -->
+               <a href="#" class="links-mobile">Contact</a>
+               <!-- Link 4 -->
+               <a href="#" class="mt-6 btn btn-outline">Login</a>
+            </div>
+            <div class="flex-grow flex justify-center items-end gap-10">
+               <div
+                  class="cursor-pointer fill-white ease-in-out duration-300 hover:fill-softRed"
+               >
+                  <svg
+                     xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                  >
+                     <path
+                        fill-rule="evenodd"
+                        d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"
+                     />
+                  </svg>
+               </div>
+               <div
+                  class="cursor-pointer fill-white ease-in-out duration-300 hover:fill-softRed"
+               >
+                  <svg
+                     xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="20"
+                  >
+                     <path
+                        fill-rule="evenodd"
+                        d="M24 2.557a9.83 9.83 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337.608a9.864 9.864 0 0 1-3.127 1.195A4.916 4.916 0 0 0 16.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 1.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 17.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 2.557z"
+                     />
+                  </svg>
+               </div>
+            </div>
          </div>
       </nav>
 
@@ -58,9 +122,7 @@
                </p>
                <div class="flex gap-4">
                   <a href="#" class="btn btn-primary"> Get it on Chrome</a>
-                  <a href="#" class="btn btn-outline-secondary">
-                     Get it on Firefoxe</a
-                  >
+                  <a href="#" class="btn btn-secondary"> Get it on Firefoxe</a>
                </div>
             </div>
             <!-- Right Side  -->
@@ -92,23 +154,28 @@
             <!-- Tabs  -->
             <ul
                class="flex flex-col items-center w-full md:justify-center mb-16 md:flex-row"
-               id="tabs"
+               id="tabs-buttons"
             >
-               <li class="tab active-text border-t-2 md:border-t-0">
+               <li
+                  class="tab active-text border-t-2 md:border-t-0"
+                  data-tab="tab-1"
+               >
                   <span>Simple Bookmarking</span>
                   <span class="active-tab"></span>
                </li>
-               <li class="tab">
+               <li class="tab" data-tab="tab-2">
                   <span>Speedy Searching</span>
                   <span></span>
                </li>
-               <li class="tab">
+               <li class="tab" data-tab="tab-3">
                   <span>Easy Sharing</span>
                   <span></span>
                </li>
             </ul>
+            <!-- Tab 1  -->
             <div
                class="flex flex-col items-center gap-24 lg:gap-32 lg:flex-row"
+               id="tab-1"
             >
                <!-- Left Side  -->
                <div class="relative">
@@ -127,6 +194,62 @@
                      Organize your bookmarks however you like. Our simple
                      drag-and-drop interface gives you complete control over how
                      you manage your favourite sites.
+                  </p>
+                  <a href="#" class="btn btn-primary hidden lg:inline-block">
+                     More Info</a
+                  >
+               </div>
+            </div>
+            <!-- Tab 2 -->
+            <div
+               class="hidden flex-col items-center gap-24 lg:gap-32 lg:flex-row"
+               id="tab-2"
+            >
+               <!-- Left Side  -->
+               <div class="relative">
+                  <img
+                     src="../images/illustration-features-tab-2.svg"
+                     alt="Illustration Tabs"
+                  />
+                  <div
+                     class="pill right-[10%] -bottom-[50px] lg:-bottom-[100px]"
+                  ></div>
+               </div>
+               <!-- Right Side  -->
+               <div class="flex flex-col items-center gap-9 lg:items-start">
+                  <h2 class="header-2 lg:text-left">Intelligent search</h2>
+                  <p class="paragraph lg:text-left">
+                     Our powerful search feature will help you find saved sites
+                     in no time at all. No need to trawl through all of your
+                     bookmarks.
+                  </p>
+                  <a href="#" class="btn btn-primary hidden lg:inline-block">
+                     More Info</a
+                  >
+               </div>
+            </div>
+            <!-- Tab 3 -->
+            <div
+               class="hidden flex-col items-center gap-24 lg:gap-32 lg:flex-row"
+               id="tab-3"
+            >
+               <!-- Left Side  -->
+               <div class="relative">
+                  <img
+                     src="../images/illustration-features-tab-3.svg"
+                     alt="Illustration Tabs"
+                  />
+                  <div
+                     class="pill right-[10%] -bottom-[50px] lg:-bottom-[100px]"
+                  ></div>
+               </div>
+               <!-- Right Side  -->
+               <div class="flex flex-col items-center gap-9 lg:items-start">
+                  <h2 class="header-2 lg:text-left">Share your bookmarks</h2>
+                  <p class="paragraph lg:text-left">
+                     Easily share your bookmarks and collections with others.
+                     Create a shareable link that you can send at the click of a
+                     button.
                   </p>
                   <a href="#" class="btn btn-primary hidden lg:inline-block">
                      More Info</a
@@ -211,7 +334,11 @@
                   <div class="question">
                      <h4 class="header-3">What is Bookmark?</h4>
                      <div>
-                        <img src="../images/icon-arrow.svg" alt="Arrow" />
+                        <img
+                           src="../images/icon-arrow.svg"
+                           alt="Arrow"
+                           class="arrow-transition"
+                        />
                      </div>
                   </div>
                   <p class="paragraph mt-6 hidden">
@@ -225,7 +352,11 @@
                   <div class="question">
                      <h4 class="header-3">How can I request a new browser?</h4>
                      <div>
-                        <img src="../images/icon-arrow.svg" alt="Arrow" />
+                        <img
+                           src="../images/icon-arrow.svg"
+                           alt="Arrow"
+                           class="arrow-transition"
+                        />
                      </div>
                   </div>
                   <p class="paragraph mt-6 hidden">
@@ -242,7 +373,11 @@
                   <div class="question">
                      <h4 class="header-3">Is there a mobile app?</h4>
                      <div>
-                        <img src="../images/icon-arrow.svg" alt="Arrow" />
+                        <img
+                           src="../images/icon-arrow.svg"
+                           alt="Arrow"
+                           class="arrow-transition"
+                        />
                      </div>
                   </div>
                   <p class="paragraph mt-6 hidden">
@@ -259,7 +394,11 @@
                         What about other Chromium browsers?
                      </h4>
                      <div>
-                        <img src="../images/icon-arrow.svg" alt="Arrow" />
+                        <img
+                           src="../images/icon-arrow.svg"
+                           alt="Arrow"
+                           class="arrow-transition"
+                        />
                      </div>
                   </div>
                   <p class="paragraph mt-6 hidden">
@@ -283,23 +422,26 @@
                Stay up-to-date with what <br />
                we're doing
             </h2>
-            <form class="flex flex-col md:items-start gap-5 mt-10 md:flex-row">
+            <form
+               class="flex flex-col md:items-start gap-5 mt-10 md:flex-row"
+               id="form"
+            >
                <div>
                   <input
                      class="input w-[300px]"
-                     type="email"
+                     type="text"
                      placeholder="Enter your email address"
                   />
                   <span
                      class="hidden absolute -translate-x-8 translate-y-[13px]"
+                     id="error-icon"
                   >
                      <img src="../images/icon-error.svg" alt="Error Icon" />
                   </span>
                   <p
                      class="hidden text-left text-xs font-bold p-1 pl-3 bg-softRed rounded-bl rounded-br -translate-y-2"
-                  >
-                     Whoops, make sure it's an email
-                  </p>
+                     id="error-message"
+                  ></p>
                </div>
                <button class="btn btn-red">Contact Us</button>
             </form>
@@ -312,7 +454,11 @@
             class="container mx-auto py-7 px-2 flex flex-col items-center text-center gap-8 md:flex-row md:px-6 md:gap-14"
          >
             <div>
-               <img src="../images/logo-bookmark-white.svg" alt="Logo" />
+               <img
+                  src="../images/logo-bookmark-white.svg"
+                  alt="Logo"
+                  class="cursor-pointer"
+               />
             </div>
             <nav class="flex flex-col gap-6 md:gap-10 md:flex-row">
                <a href="#" class="links">Features</a>

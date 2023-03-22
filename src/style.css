@@ -4,16 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-   font-family: 'Rubik', sans-serif;
-}
-
 .links {
    @apply text-grayishBlue uppercase text-sm ease-in-out duration-300  hover:text-softRed;
 }
 
+.links-mobile {
+   @apply text-white uppercase text-base border-b-[1px] border-gray-500 py-5;
+}
+
 .btn {
    @apply rounded-md text-sm shadow-lg border-transparent border-2 ease-in-out duration-500 hover:bg-gray-50;
+}
+
+.btn-outline {
+   @apply border-2 border-white p-2 uppercase text-base text-white hover:bg-transparent;
 }
 
 .btn-red {
@@ -24,7 +28,7 @@ body {
    @apply text-white bg-softBlue px-6 py-3 hover:border-softBlue hover:text-softBlue;
 }
 
-.btn-outline-secondary {
+.btn-secondary {
    @apply text-veryDarkBlue  px-6 py-3 bg-gray-100 hover:border-veryDarkBlue hover:text-veryDarkBlue;
 }
 
@@ -85,6 +89,10 @@ body {
 
 .question {
    @apply flex justify-between items-center;
+}
+
+.arrow-transition {
+   @apply ease-in-out duration-300 transition-all;
 }
 
 .header-3 {
