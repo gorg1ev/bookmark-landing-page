@@ -50,8 +50,8 @@ tabs.addEventListener('click', (e) => {
 const questions = document.querySelector('#questions');
 let currentAnswer = null;
 let currentSVG = null;
-let arrowDown = '../images/icon-arrow.svg';
-let arrowUp = '../images/icon-arrow-up.svg';
+let arrowDown = './images/icon-arrow.svg';
+let arrowUp = './images/icon-arrow-up.svg';
 
 questions.addEventListener('click', (e) => {
    const question = e.target.closest('li');
