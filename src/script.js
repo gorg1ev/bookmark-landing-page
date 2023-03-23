@@ -5,22 +5,51 @@ const overlay = document.querySelector('#overlay');
 const mainNav = document.querySelector('#main-nav');
 const mobileNav = document.querySelector('#mobile-nav');
 
+gsap.from(mainNav, { duration: 0.5, y: -100 });
+
 hamburger.addEventListener('click', () => {
-   overlay.classList.remove('hidden');
-   mobileNav.classList.remove('hidden');
-   mobileNav.classList.add('flex');
-   mainNav.classList.remove('flex');
-   mainNav.classList.add('hidden');
+   setTimeout(() => {
+      overlay.classList.remove('hidden');
+      mobileNav.classList.remove('hidden');
+      mobileNav.classList.add('flex');
+      mainNav.classList.remove('flex');
+      mainNav.classList.add('invisible');
+   }, 500);
+
+   gsap.to(mainNav, { duration: 0.5, y: -100 });
+   gsap.set(overlay, { y: 0, opacity: 0.9 });
+   gsap.set(mobileNav, { y: 0, opacity: 1 });
+   gsap.from(overlay, { duration: 0.5, delay: 0.5, y: -500, opacity: 0 });
+   gsap.from(mobileNav, { duration: 0.5, delay: 0.5, y: -500, opacity: 0 });
+
    document.body.classList.add('overflow-y-hidden');
 });
 
 close.addEventListener('click', () => {
-   overlay.classList.add('hidden');
-   mobileNav.classList.add('hidden');
-   mobileNav.classList.remove('flex');
-   mainNav.classList.add('flex');
-   mainNav.classList.remove('hidden');
+   setTimeout(() => {
+      overlay.classList.add('hidden');
+      mobileNav.classList.add('hidden');
+      mobileNav.classList.remove('flex');
+      mainNav.classList.add('flex');
+      mainNav.classList.remove('invisible');
+   }, 500);
+
+   gsap.set(mainNav, { y: 0 });
+   gsap.from(mainNav, { duration: 0.5, delay: 0.5, y: -100 });
+   gsap.to(overlay, { duration: 0.5, y: -500, opacity: 0 });
+   gsap.to(mobileNav, { duration: 0.5, y: -500, opacity: 0 });
+
    document.body.classList.remove('overflow-y-hidden');
+});
+
+gsap.from('#hero #right .pill', { duration: 1, x: 1000 });
+gsap.from('#hero #right .img', { duration: 0.5, delay: 1, scale: 0 });
+gsap.from('#hero #left h1', { duration: 0.5, delay: 1, x: -1000 });
+gsap.from('#hero #left p', { duration: 0.5, delay: 1.3, x: -1000 });
+gsap.from('#hero #left div', {
+   duration: 0.5,
+   delay: 1.6,
+   x: -1000,
 });
 
 // Features Section
@@ -37,13 +66,23 @@ tabs.addEventListener('click', (e) => {
    tab.classList.add('active-text');
    tab.children[1].classList.add('active-tab');
 
-   document.querySelector(`#${currentTabId}`).classList.remove('flex');
-   document.querySelector(`#${currentTabId}`).classList.add('hidden');
-   document.querySelector(`#${tabId}`).classList.add('flex');
-   document.querySelector(`#${tabId}`).classList.remove('hidden');
+   gsap.set(`#${currentTabId} .left`, { x: 0 });
+   gsap.set(`#${currentTabId} .right`, { x: 0 });
+   gsap.set(`#${tabId} .left`, { x: 0 });
+   gsap.set(`#${tabId} .right`, { x: 0 });
+   gsap.to(`#${currentTabId} .left`, { duration: 0.5, x: -1000 });
+   gsap.to(`#${currentTabId} .right`, { duration: 0.5, x: 1000 });
+   gsap.from(`#${tabId} .left`, { duration: 0.5, delay: 0.5, x: -1000 });
+   gsap.from(`#${tabId} .right`, { duration: 0.5, delay: 0.5, x: 1000 });
 
-   currentTab = tab;
-   currentTabId = tabId;
+   setTimeout(() => {
+      document.querySelector(`#${currentTabId}`).classList.remove('flex');
+      document.querySelector(`#${currentTabId}`).classList.add('hidden');
+      document.querySelector(`#${tabId}`).classList.add('flex');
+      document.querySelector(`#${tabId}`).classList.remove('hidden');
+      currentTab = tab;
+      currentTabId = tabId;
+   }, 500);
 });
 
 // FAQ Section
@@ -64,6 +103,9 @@ questions.addEventListener('click', (e) => {
    answer.classList.remove('hidden');
    svg.src = arrowUp;
    svg.classList.add('rotate-180');
+
+   gsap.set(answer, { opacity: 1 });
+   gsap.from(answer, { duration: 0.5, opacity: 0 });
 
    if (currentAnswer === answer) {
       answer.classList.add('hidden');
